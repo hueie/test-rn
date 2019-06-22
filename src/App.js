@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import MyButton from './component/MyButton';
 import Link from './component/Link';
+import MyWebView from './component/MyWebView'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,6 +28,7 @@ export default class App extends Component{
         <Text style={styles.instructions}>{instructions}</Text>
         <MyButton label="test label" primary onPress="{() => console.log('hi')}" />
         <Link page="http://www.facebook.com"><Text>Facebook</Text></Link>
+        <MyWebView></MyWebView>
       </View>
     );
   }

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyWebView Rendering should contain WebView 1`] = `ShallowWrapper {}`;
