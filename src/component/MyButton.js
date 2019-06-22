@@ -13,7 +13,7 @@ class MyButton extends Component {
         if (url) {
             Linking.openURL(url)
         }
-        //onPress()
+        onPress()
     }
 
     render(){
