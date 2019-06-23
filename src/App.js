@@ -22,14 +22,17 @@ const instructions = Platform.select({
 export default class App extends Component{
   render() {
     return (
+      /*
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <MyButton label="test label" primary onPress="{() => console.log('hi')}" />
         <Link page="http://www.facebook.com"><Text>Facebook</Text></Link>
-        <MyWebView></MyWebView>
+        
       </View>
+      */
+      <MyWebView></MyWebView>
     );
   }
 }
