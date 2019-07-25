@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, Linking } from 'react-native';
+import { UsbSerial } from 'react-native-usbserial';
+
+const usbs = new UsbSerial();
 
 // 1. Changed to a class based component
 class MyButton extends Component {
@@ -7,8 +10,28 @@ class MyButton extends Component {
         super(props);
     }
 
+    async getDeviceAsync () {
+        // Should be async Function
+        try {
+            const deviceList = await usbs.getDeviceListAsync();
+            const firstDevice = deviceList[0];
+            
+            console.log(firstDevice);
+    
+            if (firstDevice) {
+                const usbSerialDevice = await usbs.openDeviceAsync(firstDevice);
+                
+                console.log(usbSerialDevice);
+            }
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+
     // 2. Custom function called onPress TouchableOpacity
     onPressHandler = () => {
+        getDeviceAsync();
+
         const { onPress, url } = this.props
         if (url) {
             Linking.openURL(url)
